@@ -5,6 +5,7 @@ bcrypt
 python-jose[cryptography]
 python-multipart
 pydantic
+pydantic-settings
 python-dotenv
 pytest
 pytest-asyncio

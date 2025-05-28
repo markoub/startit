@@ -7,6 +7,8 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.core.database import init_db
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -36,6 +38,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.on_event("startup")
+async def startup_event():
+    """Initialize database on startup"""
+    logger.info("Initializing database...")
+    init_db()
+    logger.info("Database initialized successfully")
+
 
 @app.get("/health")
 async def health_check():
