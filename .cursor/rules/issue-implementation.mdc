@@ -1,0 +1,11 @@
+---
+description: when asked to implement issue
+globs: 
+alwaysApply: false
+---
+- Fetch first open issue (make sure to look chronologically) from existing github repository
+- Start a new branch named based on issue
+- Implement in TDD way of working
+- Commit and push changes
+- Create a Pull Request
+- Leave a comment on the issue with all details
